@@ -7,7 +7,7 @@ To run you need to overwrite the default command and exposes a port
 
 Usage:
 ```bash
-docker run -d -t -p PORT:PORT -v [PATH_APP_HOST]:/opt/nodejs --entrypoint start.sh sfragata/nodejs [main script name without .js]
+docker run -d -t -p PORT:PORT -v [PATH_APP_HOST]:/opt/nodejs --entrypoint start.sh sfragata/nodejs [main script name]
 ```
 Ex:
 ```bash
