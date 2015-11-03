@@ -5,6 +5,11 @@ This dockerfile installs Nodejs and Forever (https://github.com/foreverjs/foreve
 
 To run you need to overwrite the default command and exposes a port
 
-Ex:
-
+Usage:
+```bash
 docker run -d -t -p PORT:PORT -v [PATH_APP_HOST]:/opt/nodejs --entrypoint start.sh sfragata/nodejs [main script name without .js]
+```
+Ex:
+```bash
+docker run -d -t -p 3000:3000 -v /home/home/applications/weather-node.js:/opt/nodejs --name weather-node --entrypoint start.sh sfragata/nodejs weather.js
+```
