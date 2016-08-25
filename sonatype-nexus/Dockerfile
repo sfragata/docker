@@ -6,9 +6,9 @@ MAINTAINER Silvio Fragata Silva "sfragata@gmail.com"
 RUN mkdir -p /opt/sonatype-nexus /opt/sonatype-work
 
 #get nexus install
-RUN wget -O /tmp/nexus-latest-bundle.tar.gz http://www.sonatype.org/downloads/nexus-latest-bundle.tar.gz
-RUN tar xzvf /tmp/nexus-latest-bundle.tar.gz -C /opt/sonatype-nexus --strip-components=1
-RUN rm /tmp/nexus-latest-bundle.tar.gz
+RUN wget -O /tmp/nexus-latest-bundle.tar.gz http://www.sonatype.org/downloads/nexus-latest-bundle.tar.gz && \
+	tar xzvf /tmp/nexus-latest-bundle.tar.gz -C /opt/sonatype-nexus --strip-components=1 \
+	rm /tmp/nexus-latest-bundle.tar.gz
 
 #create user nexus
 RUN useradd --user-group --system --home-dir /opt/sonatype-nexus nexus
