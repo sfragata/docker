@@ -7,7 +7,7 @@ RUN mkdir -p /opt/sonatype-nexus /opt/sonatype-work
 
 #get nexus install
 RUN wget -O /tmp/nexus-latest-bundle.tar.gz http://www.sonatype.org/downloads/nexus-latest-bundle.tar.gz && \
-	tar xzvf /tmp/nexus-latest-bundle.tar.gz -C /opt/sonatype-nexus --strip-components=1 \
+	tar xzvf /tmp/nexus-latest-bundle.tar.gz -C /opt/sonatype-nexus --strip-components=1 && \
 	rm /tmp/nexus-latest-bundle.tar.gz
 
 #create user nexus
