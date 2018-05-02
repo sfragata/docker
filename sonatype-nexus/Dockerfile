@@ -1,6 +1,6 @@
 FROM sfragata/java8
 
-MAINTAINER Silvio Fragata Silva "sfragata@gmail.com"
+MAINTAINER Silvio Fragata da Silva "sfragata@gmail.com"
 
 #create folders
 RUN mkdir -p /opt/sonatype-nexus /opt/sonatype-work
