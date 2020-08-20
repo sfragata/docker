@@ -1,6 +1,6 @@
 FROM node:slim
 
-MAINTAINER Silvio Fragata da Silva "sfragata@gmail.com"
+LABEL maintainer="sfragata@gmail.com"
 
 RUN npm install forever -g
 
