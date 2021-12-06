@@ -1,0 +1,20 @@
+FROM ubuntu:latest
+
+LABEL maintainer="Silvio Fragata"
+
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive && \
+    apt-get -y install curl ffmpeg python3 && \ 
+    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN adduser --system --home /home/ytdlp ytdlp
+
+RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp && \ 
+    chmod a+rx /usr/local/bin/yt-dlp
+
+USER ytdlp
+
+WORKDIR /home/ytdlp
+
+VOLUME [ "/home/ytdlp" ]
+
+ENTRYPOINT [ "yt-dlp" ]
