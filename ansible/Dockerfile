@@ -1,6 +1,8 @@
 FROM ubuntu:20.04
 
 LABEL maintainer="sfragata@gmail.com"
+LABEL name="Silvio Fragata"
+LABEL url="github.com/sfragata"
 
 RUN apt update && DEBIAN_FRONTEND=noninteractive && apt install -y software-properties-common && \
     apt-add-repository --yes --update ppa:ansible/ansible && \

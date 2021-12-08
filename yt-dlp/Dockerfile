@@ -1,6 +1,8 @@
 FROM alpine:3.15.0
 
-LABEL maintainer="Silvio Fragata"
+LABEL maintainer="sfragata@gmail.com"
+LABEL name="Silvio Fragata"
+LABEL url="github.com/sfragata"
 
 RUN apk --no-cache add curl ffmpeg python3 && \ 
     rm -rf /var/cache/apk/*

@@ -1,6 +1,9 @@
-FROM alpine:3.14.0
+FROM alpine:3.15.0
 
-LABEL maintainer="Silvio Fragata"
+LABEL maintainer="sfragata@gmail.com"
+LABEL name="Silvio Fragata"
+LABEL url="github.com/sfragata"
+
 
 RUN apk --update add --no-cache jq
 

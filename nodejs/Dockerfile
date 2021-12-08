@@ -1,6 +1,8 @@
 FROM node:slim
 
 LABEL maintainer="sfragata@gmail.com"
+LABEL name="Silvio Fragata"
+LABEL url="github.com/sfragata"
 
 RUN npm install forever -g
 
