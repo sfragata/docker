@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'nodejs/**'
+    - '.github/workflows/nodejs.yml'
 
 jobs:
   docker:

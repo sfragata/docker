@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'jq/**'
+    - '.github/workflows/jq.yml'
 
 jobs:
   docker:
