@@ -1,11 +1,10 @@
-FROM ubuntu:20.04
+FROM alpine:3.15.0
 
 LABEL maintainer="sfragata@gmail.com"
 LABEL name="Silvio Fragata"
 LABEL url="github.com/sfragata"
 
-RUN apt update && DEBIAN_FRONTEND=noninteractive && apt install -y software-properties-common && \
-    apt-add-repository --yes --update ppa:ansible/ansible && \
-    apt install -y ansible && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apk --no-cache add ansible && \ 
+    rm -rf /var/cache/apk/*
 
 WORKDIR /ansible
