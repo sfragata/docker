@@ -1,9 +1,9 @@
-name: yt-dlp
+name: nodejs
 
 on:
   push:
     paths:
-    - 'yt-dlp/**'
+    - 'nodejs/**'
 
 jobs:
   docker:
@@ -28,6 +28,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: yt-dlp/.
+          context: nodejs/.
           push: true
-          tags: sfragata/yt-dlp:latest
+          tags: sfragata/nodejs:latest
