@@ -7,6 +7,8 @@ on:
     - '.github/workflows/yt-dlp.yml'
   schedule:
     - cron:  '0 5 15,25 * *'
+  repository_dispatch:
+    types: [yt-dlp]
 
 jobs:
   docker:
