@@ -5,6 +5,8 @@ on:
     paths:
     - 'nodejs/**'
     - '.github/workflows/nodejs.yml'
+  schedule:
+    - cron:  '0 5 15,25 * *'
 
 jobs:
   docker:

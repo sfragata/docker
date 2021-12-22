@@ -5,6 +5,8 @@ on:
     paths:
     - 'yt-dlp/**'
     - '.github/workflows/yt-dlp.yml'
+  schedule:
+    - cron:  '0 5 15,25 * *'
 
 jobs:
   docker:
