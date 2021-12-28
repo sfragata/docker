@@ -4,10 +4,14 @@ LABEL maintainer="sfragata@gmail.com"
 LABEL name="Silvio Fragata"
 LABEL url="github.com/sfragata"
 
+ARG USER_ID=1000
+ARG GROUP_ID=1000
+
 RUN apk --no-cache add curl ffmpeg python3 && \ 
     rm -rf /var/cache/apk/*
 
-RUN adduser --system --home /home/ytdlp ytdlp
+RUN addgroup -g ${GROUP_ID} ytdlp && \
+    adduser -D -h /home/ytdlp -G ytdlp -u ${USER_ID} ytdlp
 
 RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp && \ 
     chmod a+rx /usr/local/bin/yt-dlp
