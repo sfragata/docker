@@ -1,8 +1,7 @@
 FROM node:slim
 
-LABEL maintainer="sfragata@gmail.com"
-LABEL name="Silvio Fragata"
-LABEL url="github.com/sfragata"
+LABEL maintainer="Silvio Fragata <sfragata@gmail.com>"
+LABEL url="github.com/sfragata/docker"
 
 RUN npm install forever -g
 

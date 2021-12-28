@@ -1,8 +1,7 @@
 FROM alpine:3.15.0
 
-LABEL maintainer="sfragata@gmail.com"
-LABEL name="Silvio Fragata"
-LABEL url="github.com/sfragata"
+LABEL maintainer="Silvio Fragata <sfragata@gmail.com>"
+LABEL url="github.com/sfragata/docker"
 
 RUN apk --no-cache add curl && rm -rf /var/cache/apk/*
 
