@@ -1,4 +1,4 @@
-FROM alpine:3.16.0
+FROM alpine:3.18.3
 
 LABEL maintainer="Silvio Fragata <sfragata@gmail.com>"
 LABEL url="github.com/sfragata/docker"
