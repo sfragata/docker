@@ -8,4 +8,5 @@
  - yt-dlp
  - heif-convert
  - plex_exporter
+ - nvm
 
