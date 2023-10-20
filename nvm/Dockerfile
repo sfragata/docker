@@ -19,3 +19,5 @@ COPY .bash_profile /home/nvmuser/
 RUN echo ". /home/nvmuser/.bash_profile" >> /home/nvmuser/.bashrc
 
 WORKDIR /home/nvmuser/code
+
+ENTRYPOINT [ "/bin/bash" ]
