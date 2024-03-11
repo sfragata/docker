@@ -22,10 +22,6 @@ jobs:
         run: |
           echo "artifact_id=$(curl -s https://api.github.com/repos/sfragata/adguardhome_exporter/releases/latest | grep browser_download_url | head -n 1 | grep -Eo 'v[0-9].[0-9].[0-9]')" >> $GITHUB_ENV
       -
-        name: use value
-        run: | 
-          printf '%s\n' "$artifact_id"
-      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       -
