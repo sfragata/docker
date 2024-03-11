@@ -20,7 +20,7 @@ jobs:
       - 
         name: set artifact version
         run: |
-          echo 'artifact_id=$(curl -s https://api.github.com/repos/sfragata/adguardhome_exporter/releases/latest | grep browser_download_url | head -n 1 | grep -o "v\d.\d.\d")' >> "$GITHUB_ENV"
+          echo "artifact_id=$(curl -s https://api.github.com/repos/sfragata/adguardhome_exporter/releases/latest | grep browser_download_url | head -n 1 | grep -o \"v\d.\d.\d\")\"" >> "$GITHUB_ENV"
       -
         name: use value
         run: | 
