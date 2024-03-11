@@ -1,0 +1,27 @@
+name: adguardhome_exporter
+
+on:
+  push:
+    paths:
+    - 'adguardhome_exporter/**'
+    - '.github/workflows/adguardhome_exporter.yml'
+  schedule:
+    - cron:  '0 5 15,25 * *'
+  repository_dispatch:
+    types: [adguardhome_exporter]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+      - 
+        name: set artifact version
+        run: |
+          echo 'artifact_id=`curl -s https://api.github.com/repos/sfragata/adguardhome_exporter/releases/latest | grep browser_download_url | head -n 1 | grep -o "v\d.\d.\d"`' >> "$GITHUB_ENV"
+      -
+        name: use value
+        run: | 
+          printf '%s\n' "$artifact_id"
