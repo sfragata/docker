@@ -7,8 +7,7 @@ on:
     - '.github/workflows/heif-convert.yml'
   schedule:
     - cron:  '0 5 15,25 * *'
-  repository_dispatch:
-    types: [heif-convert]
+  workflow_dispatch:
 
 jobs:
   docker:

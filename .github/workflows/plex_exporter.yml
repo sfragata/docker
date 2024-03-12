@@ -7,8 +7,7 @@ on:
     - '.github/workflows/plex_exporter.yml'
   schedule:
     - cron:  '0 5 15,25 * *'
-  repository_dispatch:
-    types: [plex_exporter]
+  workflow_dispatch:
 
 jobs:
   docker:

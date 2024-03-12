@@ -7,8 +7,7 @@ on:
     - '.github/workflows/jq.yml'
   schedule:
     - cron:  '0 5 15,25 * *'
-  repository_dispatch:
-    types: [jq]
+  workflow_dispatch:
 
 jobs:
   docker:
