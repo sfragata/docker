@@ -45,5 +45,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: plex_exporter/.
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: sfragata/plex_exporter:${{ github.event.client_payload.image_version }}          
