@@ -35,4 +35,6 @@ jobs:
           context: yt-dlp/.
           platforms: linux/amd64,linux/arm64
           push: true
+          provenance: mode=min
+          sbom: true
           tags: sfragata/yt-dlp:latest

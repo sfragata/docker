@@ -34,10 +34,13 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build and push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: adguardhome_exporter/.
           push: true
+          provenance: mode=min
+          sbom: true
+          platforms: linux/amd64,linux/arm64
           tags: sfragata/adguardhome_exporter:latest, sfragata/adguardhome_exporter:${{ env.artifact_id }}
       -
         name: Build and push tag

@@ -34,15 +34,18 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build and push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: plex_exporter/.
           push: true
+          provenance: mode=min
+          sbom: true
+          platforms: linux/amd64,linux/arm64
           tags: sfragata/plex_exporter:latest, sfragata/plex_exporter:${{ env.artifact_id }}
       -
         name: Build and push tag
         if: github.event.action == 'plex_exporter'
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: plex_exporter/.
           platforms: linux/amd64,linux/arm64
