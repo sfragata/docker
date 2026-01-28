@@ -1,4 +1,4 @@
-FROM alpine:3.21
+FROM dhi.io/alpine-base:3.23-dev
 
 LABEL maintainer="Silvio Fragata <sfragata@gmail.com>"
 LABEL url="github.com/sfragata/docker"
@@ -12,7 +12,7 @@ RUN apk --no-cache add curl ffmpeg python3 && \
 RUN addgroup -g ${GROUP_ID} ytdlp && \
     adduser -D -h /home/ytdlp -G ytdlp -u ${USER_ID} ytdlp
 
-RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp && \ 
+RUN mkdir -p /usr/local/bin && curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp && \ 
     chmod a+rx /usr/local/bin/yt-dlp
 
 USER ytdlp
